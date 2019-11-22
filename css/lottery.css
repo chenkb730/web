@@ -1,0 +1,145 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  outline: none;
+}
+
+.container {
+  /*background: url('../images/bg.jpeg');*/
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+}
+
+#lottery {
+  text-align: center;
+  justify-content: space-around;
+  display: flex;
+}
+
+.detail {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+  margin-right: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.content {
+  flex: 1;
+}
+
+.count {
+  font-size: 20pt;
+  font-family: "Kaiti SC", serif;
+}
+
+#rotary-table {
+  width: 340px;
+  height: 349px;
+  position: relative;
+  margin: auto;
+  background-color: antiquewhite;
+
+}
+
+.award {
+  width: 90px;
+  height: 96px;
+  line-height: 96px;
+  text-align: center;
+  float: left;
+  position: absolute;
+  overflow: hidden;
+  background-color: aquamarine;
+
+}
+
+.active {
+  background-color: goldenrod;
+}
+
+.award0 {
+  top: 21px;
+  left: 21px;
+}
+
+.award1 {
+  top: 21px;
+  left: 125px;
+}
+
+.award2 {
+  top: 21px;
+  right: 22px;
+}
+
+.award3 {
+  top: 126px;
+  right: 22px;
+}
+
+.award4 {
+  bottom: 22.5px;
+  right: 22px;
+}
+
+.award5 {
+  bottom: 22.5px;
+  right: 125.5px;
+}
+
+.award6 {
+  bottom: 22.5px;
+  left: 21px;
+}
+
+.award7 {
+  top: 126px;
+  left: 21px;
+}
+
+.lottery0 {
+  background-color: #dddddd;
+}
+
+.lottery1 {
+  background-color: gold;
+}
+
+.lottery2 {
+  background-color: darksalmon;
+}
+
+.lottery3 {
+  background-color: hotpink;
+}
+
+.lottery4 {
+  background-color: goldenrod;
+}
+
+.title {
+  font-size: 20pt;
+  font-style: inherit;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.info {
+  margin-top: 20px;
+  font-size: 20pt;
+}
+
+#start-btn {
+  position: absolute;
+  top: 125px;
+  left: 124px;
+  width: 90px;
+  height: 96px;
+  line-height: 90px;
+  text-align: center;
+  background-color: coral;
+}
