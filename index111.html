@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>抽奖</title>
+  <link href="css/lottery.css" rel="stylesheet">
+</head>
+
+<body class="container">
+<div id="lottery">
+  <!--<div class="detail">-->
+  <!--<ul v-for="(award) in lotteryData()">-->
+  <!--<p class="count">{{award.name}}:{{award.lottery}} 还有 {{award.num}}个</p>-->
+  <!--</ul>-->
+  <!--</div>-->
+  <div class="content">
+    <h1 class="title">活动抽奖系统</h1>
+    <div id="rotary-table">
+      <div class="award" v-for="(award,index) in awards"
+           :class="['award'+index,{'active': index===current}]">
+        {{award.name}}
+      </div>
+      <div id="start-btn" @click="start">{{title}}</div>
+    </div>
+
+    <div class="info" v-if="!showToast">当前奖品为:{{this.awards[this.current].name}}</div>
+  </div>
+</div>
+<script src="https://unpkg.com/vue"></script>
+<script src="https://cdn.jsdelivr.net/npm/lodash@4.13.1/lodash.min.js"></script>
+<script  src="javascript/lottery.js">
+  // new Vue({
+  //   el: '#lottery',
+  //   data: {
+  //     current: 0,
+  //     title: '开始',
+  //     isBegin: false,
+  //     awards: [
+  //       {id: 1, name: '无', type: 0},
+  //       {id: 2, name: '一等奖', type: '1', lottery: '笔记本', num: 10},
+  //       {id: 3, name: '三等奖', type: '3', lottery: '笔记本', num: 20},
+  //       {id: 4, name: '二等奖', type: '1', lottery: '笔记本', num: 20},
+  //       {id: 5, name: '二等奖', type: '2', lottery: '笔记本', num: 20},
+  //       {id: 6, name: '三等奖', type: '3', lottery: '笔记本', num: 20},
+  //       {id: 7, name: '三等奖', type: '3', lottery: '笔记本', num: 20},
+  //       {id: 8, name: '三等奖', type: '3', lottery: '笔记本', num: 20}
+  //     ],
+  //     speed: 100,
+  //     diff: 10,
+  //     award: {},
+  //     time: 0
+  //
+  //   },
+  //   methods: {
+  //     lotteryData () {
+  //       return _.sortBy(this.awards.filter((v) => {
+  //         return v.id !== 1
+  //       }), (v) => {
+  //         return v.type
+  //       })
+  //     },
+  //     removeLottery () {
+  //       if (this.current !== 0) {
+  //         const award = this.awards[this.current]
+  //         _.assign({}, award, {num: award.num - 1})
+  //       }
+  //     },
+  //     start () {
+  //       this.drawAward()
+  //       // 开始抽奖
+  //       this.time = Date.now()
+  //       this.speed = 200
+  //       this.diff = 15
+  //     },
+  //     drawAward () {
+  //       if (!this.isBegin) {
+  //         this.isBegin = true
+  //         this.title = '结束'
+  //         setTimeout(() => {
+  //           this.award = {
+  //             id: '4',
+  //             name: '笨驴',
+  //           }
+  //         }, 1000)
+  //         this.move()
+  //       } else {
+  //         this.stop()
+  //       }
+  //
+  //     },
+  //     stop () {
+  //       if (this.isBegin) {
+  //         this.isBegin = false
+  //         this.title = '开始'
+  //         clearTimeout(window.timeout)
+  //         this.removeLottery()
+  //         // setTimeout(() => {
+  //         //   alert('恭喜你，抽中了' + this.awards[this.current].name)
+  //         // }, 0)
+  //
+  //       }
+  //     },
+  //     move () {
+  //       window.timeout = setTimeout(() => {
+  //         this.current++
+  //         if (this.current > 7) {
+  //           this.current = 0
+  //         }
+  //         if ((Date.now() - this.time) / 1000 > 2) {
+  //           this.speed += this.diff
+  //           if ((Date.now() - this.time) / 1000 > 4) {
+  //             this.stop()
+  //             return
+  //           }
+  //         } else {
+  //           this.speed -= this.diff
+  //         }
+  //         console.log(this.speed)
+  //         this.move()
+  //       }, this.speed)
+  //     }
+  //   }
+  // })
+</script>
+</body>
+</html>
